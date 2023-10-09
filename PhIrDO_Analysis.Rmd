@@ -19,11 +19,11 @@ library(hms)
 ##Microelectrode Profiles
 ```{r}
 #Each Raw data file corresponds to one sequence programmed and run
-rawDO1<-read.table("Microelectrode profile data/28072023002440_TFS_PhIr_5cmdepth_2mm_365/28072023002440_data.txt", sep="\t", header = TRUE)
-rawDO2<-read.table("Microelectrode profile data/28072023003700_TFS_PhIr_5cm_1hr_diurnal_368/28072023003700_data.txt", sep="\t", header = TRUE)
-rawDO3<-read.table("Microelectrode profile data/28072023142101_TFS_PhIr_5cm_1hr_diurnal_370/28072023142101_data.txt", sep="\t", header = TRUE)
-rawDO4<-read.table("Microelectrode profile data/29072023131024_TFS_PhIr_5cm_1hr_diurnal_371/29072023131024_data.txt", sep="\t", header = TRUE)
-rawDO5<-read.table("Microelectrode profile data/29072023213519_TFS_PhIr_5cm_30min_2d_374/29072023213519_data.txt", sep="\t", header = TRUE)
+rawDO1<-read.table("Data/Microelectrode profile data/28072023002440_TFS_PhIr_5cmdepth_2mm_365/28072023002440_data.txt", sep="\t", header = TRUE)
+rawDO2<-read.table("Data/Microelectrode profile data/28072023003700_TFS_PhIr_5cm_1hr_diurnal_368/28072023003700_data.txt", sep="\t", header = TRUE)
+rawDO3<-read.table("Data/Microelectrode profile data/28072023142101_TFS_PhIr_5cm_1hr_diurnal_370/28072023142101_data.txt", sep="\t", header = TRUE)
+rawDO4<-read.table("Data/Microelectrode profile data/29072023131024_TFS_PhIr_5cm_1hr_diurnal_371/29072023131024_data.txt", sep="\t", header = TRUE)
+rawDO5<-read.table("Data/Microelectrode profile data/29072023213519_TFS_PhIr_5cm_30min_2d_374/29072023213519_data.txt", sep="\t", header = TRUE)
 
 #Adding the file name for each set of raw data in the "file" column
 rawDO1$file<-"28072023002440_data.txt"
