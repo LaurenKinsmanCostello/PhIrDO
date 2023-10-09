@@ -184,16 +184,15 @@ FiboxDO.surf<-FiboxDO %>%
 summary(FiboxDO.surf)
 ```
 
-
 #Graphs
 ##Microelectrode DO Profiles
-###Graphs of DO vs. time, color coded by depth, shape coded by sensor
+###DO vs. time, color coded by depth
 
 ```{r}
 #all of the data except the first program
 microDO %>%
-  filter(program!= "28072023002440_TFS_PhIr_5cmdepth_2mm_365" )%>%
-ggplot( aes(x=RDateTimeAST, y=DO.mgL, color=Motor1.mm, shape=program))+
+  filter(program!= "28072023002440_TFS_PhIr_5cmdepth_2mm_365" ) %>%
+ggplot( aes(x=RDateTimeAST, y=DO.mgL, color=Motor1.mm) ) +
   geom_point()+
   scale_color_gradient(low="blue", high="orange")
 
