@@ -49,9 +49,6 @@ microDOraw<-rbind(microDOraw, rawDO5)
 microDOraw<-microDOraw %>%
   select(Time, Channel.1..mV., Channel.2..mV., Channel.1_cal..µmol.L., Channel.2_cal..µmol.L., Motor.1..mm., Motor.2..mm., GroupId, file, program)
 
-#making program a factor
-microDO$program<-as.factor(microDO$program)
-
 #renaming columns to get rid of annoying extra punctuations
 names(microDOraw)[names(microDOraw)=="Channel.1..mV."]<-"Channel1_mV"
 names(microDOraw)[names(microDOraw)=="Channel.2..mV."]<-"Channel2_mV"
@@ -73,7 +70,6 @@ microDOraw$RDateTimeEDT<-as.POSIXct(microDOraw$Time, format="%d%m%Y %H%M%S")
 microDOraw$RDateTimeAST<-as.POSIXct(microDOraw$RDateTimeEDT-hours(4))
 
 #gathering data from the 2 DO sensors into a a single column, creating a new data frame called micro DO to use for most data processing and analysis from here on out.
-
 microDO<-microDOraw %>%
   #selecting only the relevant columns
   select(Time, Channel1_DO_mgL, Channel2_DO_mgL, Motor1.mm, Motor2.mm, program, RDateTimeEDT, RDateTimeAST) %>%
@@ -85,12 +81,8 @@ microDO$RTime<-as_hms(microDO$RDateTimeAST)
 microDO$RDate<-as_date(microDO$RDateTimeAST)
 
 #Make a column that's the hour w/o minutes and seconds that a profile was taken, which will help with graphing later
-
 #Found example here: https://stackoverflow.com/questions/16444242/rounding-times-to-the-nearest-hour-in-r
-
 microDO$RHour<-as.numeric(format(round(microDO$RDateTimeAST, units="hours"), format="%H"))
-#Hour is just a number, not a date time or time object.
-plot(microDO$RDateTimeAST~microDO$RHour)
 ```
 
 ###Notes on data
@@ -106,27 +98,21 @@ Programs:
 Single profile, depth recorded on Motor2.mm
 
 ###Omitting data from first program from data being used
-
 ```{r}
 microDO<-microDO%>%
   filter(program!="28072023002440_TFS_PhIr_5cmdepth_2mm_365")
 ```
 ###Giving each profile a unique name
 ```{r}
-
 #Each profile in all four of the programs has 26 points, which makes things easier
-
 #https://stackoverflow.com/questions/32078578/how-to-group-by-every-7-rows-and-aggregate-those-7-values-by-median
-
 #theData$seven_day_index <- c(0, rep(1:(nrow(theData)-1)%/%7))
 
 microDO$ProfIndex <- c(0, rep(1:(nrow(microDO)-1)%/%26) )
 #I don't know how this works but it does!
 
 ##Name each profile with the date and time stamp of the first data point
-
 #https://stackoverflow.com/questions/69375473/r-how-to-replace-all-rows-in-a-group-with-a-value-from-first-row-in-a-df
-
 #First() function in dplyr gets the first value in each, then adding in the sensor name
 microDO<-microDO %>%
   group_by(ProfIndex) %>%
@@ -148,7 +134,7 @@ microDO$RProfileStartTime<-as_hms(microDO$ProfileStart)
 ##Presens FibOx DO Data
 ```{r}
 #Reading in Dissolved oxygen concentrations measured with hand-held Presens FibOx cable
-FiboxDOraw<-read.csv("PhIr2023_DissolvedOxygenMeasurements.csv")
+FiboxDOraw<-read.csv("Data/PhIr2023_DissolvedOxygenMeasurements.csv")
 
 #Removing ghost rows by omitting anything with DO is na becuase every row should have a DO value
 FiboxDOraw<-FiboxDOraw %>%
@@ -161,7 +147,7 @@ FiboxDOraw<-FiboxDOraw %>%
 #Making a DateTime field 
 FiboxDOraw$RDate<-as.POSIXct(FiboxDOraw$Date, format="%d-%b-%y")
 #Pasting Date and Time together to make a DateTime column
-FiboxDOraw$DateTime<-paste(FiboxDOraw$RDate, FiboxDO$Time)
+FiboxDOraw$DateTime<-paste(FiboxDOraw$RDate, FiboxDOraw$Time)
 #telling R that it's a Date Tiem using as.POSIXct
 FiboxDOraw$RDateTime<- as.POSIXct (FiboxDOraw$DateTime, format="%Y-%m-%d %H:%M")
 
@@ -175,19 +161,16 @@ FiboxDO$Depth.cm<-as.numeric(FiboxDO$Depth.cm)
 FiboxDO$Temp.degC<-as.numeric(FiboxDO$Temp.degC)
 
 ##Making an Area Site column
-
 FiboxDO$AreaSite<-paste(FiboxDO$Area,FiboxDO$Site)
 
-
-##Trying to make a column with only time of day
+##make a column with only time of day
 # starting with this as a resource 
 ##https://r4ds.hadley.nz/datetimes.html
 ##the above website says: "In this chapter we are going to focus on dates and date-times as R doesn’t have a native class for storing times. If you need one, you can use the hms package."
-##So, turning to the hms package: https://hms.tidyverse.org/
+##So, using the hms package: https://hms.tidyverse.org/
 
-library(hms)
 FiboxDO$Time<-as_hms(FiboxDO$RDateTime)
-#Testing to see if it work and how it graphs
+#Testing to see if it worked and how it graphs
 ggplot(FiboxDO, aes(x=Time, y=DO.mgL))+
   geom_point()
 #Looks like it worked! yay.
