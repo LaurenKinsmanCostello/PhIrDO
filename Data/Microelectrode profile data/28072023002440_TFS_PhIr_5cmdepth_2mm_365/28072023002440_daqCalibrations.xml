@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<section serializerVersion="1.0.0" version="1.0.0">
+	<calibrationData>
+		<calibration locator="dev1@daq" channelIndex="2">
+			<type>Manual</type>
+			<creationTimestamp>23052023 121456</creationTimestamp>
+			<data>
+				<points>
+					<point x="1014.4400000000001" y="8.8800000000000008" />
+					<point x="1013.79" y="8.8800000000000008" />
+					<point x="1014.04" y="8.8800000000000008" />
+					<point x="0.97431800000000002" y="0" />
+					<point x="1.00031" y="0" />
+					<point x="0.91775099999999998" y="0" />
+				</points>
+			</data>
+		</calibration>
+		<calibration locator="dev1@daq" channelIndex="1">
+			<type>Manual</type>
+			<creationTimestamp>28072023 001253</creationTimestamp>
+			<data>
+				<points>
+					<point x="690.72076416015625" y="8" />
+					<point x="690.1845703125" y="8" />
+					<point x="689.60205078125" y="8" />
+					<point x="4.7786026000976562" y="0" />
+					<point x="4.8016543388366699" y="0" />
+					<point x="4.9823074340820312" y="0" />
+				</points>
+			</data>
+		</calibration>
+		<calibration locator="dev1@daq" channelIndex="0">
+			<type>Manual</type>
+			<creationTimestamp>28072023 001811</creationTimestamp>
+			<data>
+				<points>
+					<point x="1.7111181020736694" y="0" />
+					<point x="1.730082631111145" y="0" />
+					<point x="1.66370689868927" y="0" />
+					<point x="631.0877685546875" y="8" />
+					<point x="630.0927734375" y="8" />
+					<point x="627.99835205078125" y="8" />
+				</points>
+			</data>
+		</calibration>
+	</calibrationData>
+</section>

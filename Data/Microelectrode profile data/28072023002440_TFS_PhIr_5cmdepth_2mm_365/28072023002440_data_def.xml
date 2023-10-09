@@ -1,0 +1,199 @@
+<?xml version="1.0" ?>
+<section serializerVersion="1.0.0" version="1.0.0">
+	<csvMeta>
+		<column type="time" />
+		<column type="daq">
+			<property name="valuePrefix">m</property>
+			<property name="valuePrecision">2</property>
+			<property name="isCalibrated">false</property>
+			<property name="calibrationType">Manual</property>
+			<property name="label">Channel 1</property>
+			<property name="valueUnit">V</property>
+			<property name="index">0</property>
+			<property name="locator">dev1@daq</property>
+			<property name="sensorType">Oxygen</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">2</property>
+			<property name="valuePrefix">m</property>
+			<property name="isCalibrated">false</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit">V</property>
+			<property name="label">Channel 2</property>
+			<property name="index">1</property>
+			<property name="sensorType">Oxygen</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">2</property>
+			<property name="valuePrefix">m</property>
+			<property name="isCalibrated">false</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit">V</property>
+			<property name="label">Channel 3</property>
+			<property name="index">2</property>
+			<property name="sensorType">None</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrefix">m</property>
+			<property name="valuePrecision">2</property>
+			<property name="isCalibrated">false</property>
+			<property name="calibrationType">Manual</property>
+			<property name="label">Channel 4</property>
+			<property name="valueUnit">V</property>
+			<property name="index">3</property>
+			<property name="locator">dev1@daq</property>
+			<property name="sensorType">None</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrefix">m</property>
+			<property name="valuePrecision">2</property>
+			<property name="isCalibrated">false</property>
+			<property name="calibrationType">Manual</property>
+			<property name="label">Channel 5</property>
+			<property name="valueUnit">V</property>
+			<property name="index">4</property>
+			<property name="locator">dev1@daq</property>
+			<property name="sensorType">None</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrefix">m</property>
+			<property name="valuePrecision">2</property>
+			<property name="isCalibrated">false</property>
+			<property name="calibrationType">Manual</property>
+			<property name="label">Channel 6</property>
+			<property name="valueUnit">V</property>
+			<property name="index">5</property>
+			<property name="locator">dev1@daq</property>
+			<property name="sensorType">None</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrefix">m</property>
+			<property name="valuePrecision">2</property>
+			<property name="isCalibrated">false</property>
+			<property name="calibrationType">Manual</property>
+			<property name="label">Channel 7</property>
+			<property name="valueUnit">V</property>
+			<property name="index">6</property>
+			<property name="locator">dev1@daq</property>
+			<property name="sensorType">None</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">2</property>
+			<property name="valuePrefix">m</property>
+			<property name="isCalibrated">false</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit">V</property>
+			<property name="label">Channel 8</property>
+			<property name="index">7</property>
+			<property name="sensorType">None</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">2</property>
+			<property name="valuePrefix">µ</property>
+			<property name="isCalibrated">true</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit">mol/L</property>
+			<property name="label">Channel 1</property>
+			<property name="index">0</property>
+			<property name="sensorType">Oxygen</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">2</property>
+			<property name="valuePrefix">µ</property>
+			<property name="isCalibrated">true</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit">mol/L</property>
+			<property name="label">Channel 2</property>
+			<property name="index">1</property>
+			<property name="sensorType">Oxygen</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">0</property>
+			<property name="valuePrefix" />
+			<property name="isCalibrated">true</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit" />
+			<property name="label">Channel 3</property>
+			<property name="index">2</property>
+			<property name="sensorType">None</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">0</property>
+			<property name="valuePrefix" />
+			<property name="isCalibrated">true</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit" />
+			<property name="label">Channel 4</property>
+			<property name="index">3</property>
+			<property name="sensorType">None</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">0</property>
+			<property name="valuePrefix" />
+			<property name="isCalibrated">true</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit" />
+			<property name="label">Channel 5</property>
+			<property name="index">4</property>
+			<property name="sensorType">None</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">0</property>
+			<property name="valuePrefix" />
+			<property name="isCalibrated">true</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit" />
+			<property name="label">Channel 6</property>
+			<property name="index">5</property>
+			<property name="sensorType">None</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrecision">0</property>
+			<property name="valuePrefix" />
+			<property name="isCalibrated">true</property>
+			<property name="calibrationType">Manual</property>
+			<property name="valueUnit" />
+			<property name="label">Channel 7</property>
+			<property name="index">6</property>
+			<property name="sensorType">None</property>
+			<property name="locator">dev1@daq</property>
+		</column>
+		<column type="daq">
+			<property name="valuePrefix" />
+			<property name="valuePrecision">0</property>
+			<property name="isCalibrated">true</property>
+			<property name="calibrationType">Manual</property>
+			<property name="label">Channel 8</property>
+			<property name="valueUnit" />
+			<property name="index">7</property>
+			<property name="locator">dev1@daq</property>
+			<property name="sensorType">None</property>
+		</column>
+		<column type="motor">
+			<property name="axis">Z</property>
+			<property name="valuePrefix">m</property>
+			<property name="valuePrecision">3</property>
+			<property name="label">Motor 1</property>
+			<property name="valueUnit">m</property>
+			<property name="locator">motor1@motor</property>
+		</column>
+		<column type="motor">
+			<property name="axis">X</property>
+			<property name="valuePrefix">m</property>
+			<property name="valuePrecision">3</property>
+			<property name="label">Motor 2</property>
+			<property name="valueUnit">m</property>
+			<property name="locator">motor2@motor</property>
+		</column>
+		<column type="groupId" />
+	</csvMeta>
+</section>

@@ -1,0 +1,160 @@
+28072023_00:24:50.307586 [System] Waiting for trigger
+28072023_00:25:00.029388 [System] Starting previously armed sequence
+28072023_00:25:00.080535 [System] Running sequence 'TFS_PhIr_5cmdepth_2mm', deployment 'TFS_PhIr_5cmdepth_2mm_365'
+28072023_00:25:00.171356 [Motor2.MoveToPosition] Enter with position = 0, speed = 100
+28072023_00:25:00.382446 [Motor2.MoveToPosition] Leave with result = 1
+28072023_00:25:00.389129 [Core.Wait] Enter with delay = 5
+28072023_00:25:05.391784 [Core.Wait] Leave with result = 1
+28072023_00:25:05.398376 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:25:06.376251 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:25:06.382629 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:25:11.576293 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:25:11.581878 [Core.Wait] Enter with delay = 5
+28072023_00:25:16.587127 [Core.Wait] Leave with result = 1
+28072023_00:25:16.592987 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:25:17.587951 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:25:17.595214 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:25:22.778900 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:25:22.784454 [Core.Wait] Enter with delay = 5
+28072023_00:25:27.786285 [Core.Wait] Leave with result = 1
+28072023_00:25:27.792449 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:25:28.775360 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:25:28.781219 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:25:33.980010 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:25:33.986541 [Core.Wait] Enter with delay = 5
+28072023_00:25:38.988372 [Core.Wait] Leave with result = 1
+28072023_00:25:38.994171 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:25:39.987640 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:25:39.995147 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:25:45.178344 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:25:45.185058 [Core.Wait] Enter with delay = 5
+28072023_00:25:50.186798 [Core.Wait] Leave with result = 1
+28072023_00:25:50.194030 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:25:51.173950 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:25:51.179901 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:25:56.381042 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:25:56.386230 [Core.Wait] Enter with delay = 5
+28072023_00:26:01.387878 [Core.Wait] Leave with result = 1
+28072023_00:26:01.393920 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:26:02.389007 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:26:02.394104 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:26:07.579254 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:26:07.586425 [Core.Wait] Enter with delay = 5
+28072023_00:26:12.588684 [Core.Wait] Leave with result = 1
+28072023_00:26:12.594604 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:26:13.591064 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:26:13.597229 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:26:18.781890 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:26:18.787902 [Core.Wait] Enter with delay = 5
+28072023_00:26:23.789459 [Core.Wait] Leave with result = 1
+28072023_00:26:23.796691 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:26:24.786987 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:26:24.792572 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:26:29.979614 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:26:29.986633 [Core.Wait] Enter with delay = 5
+28072023_00:26:34.988800 [Core.Wait] Leave with result = 1
+28072023_00:26:34.994293 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:26:35.975585 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:26:35.982879 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:26:41.181243 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:26:41.187164 [Core.Wait] Enter with delay = 5
+28072023_00:26:46.188964 [Core.Wait] Leave with result = 1
+28072023_00:26:46.195983 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:26:47.187438 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:26:47.193267 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:26:52.380126 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:26:52.386474 [Core.Wait] Enter with delay = 5
+28072023_00:26:57.390747 [Core.Wait] Leave with result = 1
+28072023_00:26:57.396606 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:26:58.376007 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:26:58.383026 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:27:03.331268 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:27:03.336730 [Core.Wait] Enter with delay = 5
+28072023_00:27:08.338806 [Core.Wait] Leave with result = 1
+28072023_00:27:08.345367 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:27:09.281738 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:27:09.287689 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:27:14.282470 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:27:14.289703 [Core.Wait] Enter with delay = 5
+28072023_00:27:19.291839 [Core.Wait] Leave with result = 1
+28072023_00:27:19.297607 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:27:20.302337 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:27:20.308044 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:27:25.484741 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:27:25.490997 [Core.Wait] Enter with delay = 5
+28072023_00:27:30.492858 [Core.Wait] Leave with result = 1
+28072023_00:27:30.499847 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:27:31.476959 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:27:31.482818 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:27:36.436523 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:27:36.443115 [Core.Wait] Enter with delay = 5
+28072023_00:27:41.444793 [Core.Wait] Leave with result = 1
+28072023_00:27:41.450927 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:27:42.382171 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:27:42.389129 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:27:47.386901 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:27:47.392425 [Core.Wait] Enter with delay = 5
+28072023_00:27:52.394195 [Core.Wait] Leave with result = 1
+28072023_00:27:52.400878 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:27:53.400909 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:27:53.406524 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:27:58.584899 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:27:58.591613 [Core.Wait] Enter with delay = 5
+28072023_00:28:03.595092 [Core.Wait] Leave with result = 1
+28072023_00:28:03.600738 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:28:04.576538 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:28:04.581695 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:28:09.536712 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:28:09.542266 [Core.Wait] Enter with delay = 5
+28072023_00:28:14.544494 [Core.Wait] Leave with result = 1
+28072023_00:28:14.550109 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:28:15.496917 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:28:15.502777 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:28:20.488159 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:28:20.495422 [Core.Wait] Enter with delay = 5
+28072023_00:28:25.510589 [Core.Wait] Leave with result = 1
+28072023_00:28:25.517456 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:28:26.490478 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:28:26.495544 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:28:31.685394 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:28:31.691040 [Core.Wait] Enter with delay = 5
+28072023_00:28:36.694305 [Core.Wait] Leave with result = 1
+28072023_00:28:36.701232 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:28:37.676300 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:28:37.682067 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:28:42.638061 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:28:42.643951 [Core.Wait] Enter with delay = 5
+28072023_00:28:47.646209 [Core.Wait] Leave with result = 1
+28072023_00:28:47.651885 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:28:48.582397 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:28:48.588104 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:28:53.586700 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:28:53.593841 [Core.Wait] Enter with delay = 5
+28072023_00:28:58.595977 [Core.Wait] Leave with result = 1
+28072023_00:28:58.602600 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:28:59.593566 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:28:59.600372 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:29:04.539031 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:29:04.544982 [Core.Wait] Enter with delay = 5
+28072023_00:29:09.547302 [Core.Wait] Leave with result = 1
+28072023_00:29:09.555664 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:29:10.579528 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:29:10.585754 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:29:15.738922 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:29:15.745452 [Core.Wait] Enter with delay = 5
+28072023_00:29:20.747314 [Core.Wait] Leave with result = 1
+28072023_00:29:20.753051 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:29:21.685729 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:29:21.690948 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:29:26.687103 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:29:26.690917 [Core.Wait] Enter with delay = 5
+28072023_00:29:31.692413 [Core.Wait] Leave with result = 1
+28072023_00:29:31.698730 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:29:32.704895 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:29:32.712036 [Motor2.MoveDistance] Enter with distance = 2, speed = 75
+28072023_00:29:37.889251 [Motor2.MoveDistance] Leave with result = 1
+28072023_00:29:37.896484 [Core.Wait] Enter with delay = 5
+28072023_00:29:42.898254 [Core.Wait] Leave with result = 1
+28072023_00:29:42.904571 [Datalogger.MeasureSamples] Enter with frequency = 1, samples = 1
+28072023_00:29:43.879913 [Datalogger.MeasureSamples] Leave with result = 1
+28072023_00:29:44.361175 [System] Sequence ended. Result: Completed
