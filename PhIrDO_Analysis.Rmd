@@ -320,6 +320,7 @@ ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm))+
   geom_point(size=0.1)+
   scale_y_reverse() +
   facet_grid(rows=vars(RDate), cols=vars(RHour))+
+  theme_light()+
   theme(text=element_text(size=8))+
  labs(x="DO (mg/L)", y= "Depth (mm)")
 ggsave("Figures/AllDOProfiles.png", width=10, height=3, units="in")
