@@ -75,35 +75,13 @@ microDO<-microDOraw %>%
   select(Time, Channel1_DO_mgL, Channel2_DO_mgL, Motor1.mm, Motor2.mm, program, RDateTimeEDT, RDateTimeAST) %>%
   #gathering the 2 DO sensors into a single column
   gather(key="DOsensor", value="DO.mgL", Channel1_DO_mgL:Channel2_DO_mgL)
-#making a column of just times using the as_hms() function in the hms package
-microDO$RTime<-as_hms(microDO$RDateTimeAST)
-#making a column of just date for faceting by date in graphs
-microDO$RDate<-as_date(microDO$RDateTimeAST)
-
-#Make a column that's the hour w/o minutes and seconds that a profile was taken, which will help with graphing later
-#Found example here: https://stackoverflow.com/questions/16444242/rounding-times-to-the-nearest-hour-in-r
-microDO$RHour<-as.numeric(format(round(microDO$RDateTimeAST, units="hours"), format="%H"))
-```
-
-###Notes on data
-28072023002440_TFS_PhIr_5cmdepth_2mm_365 is a trial run, do not use
-28072023003700_TFS_PhIr_5cm_1hr_diurnal_368, 28072023003700_data_txt contains data for profiles that got from Motor 1=0 to 49.969 and elapse for 895 seconds and occur every 9,123 seconds (~2.5 hours)
-Laptop was set to Eastern Time Zone. To convert to local alaska time, subtract 4 hours
-Programs:
-[1] "28072023002440_TFS_PhIr_5cmdepth_2mm_365"    "28072023003700_TFS_PhIr_5cm_1hr_diurnal_368"
-[3] "28072023142101_TFS_PhIr_5cm_1hr_diurnal_370" "29072023131024_TFS_PhIr_5cm_1hr_diurnal_371"
-[5] "29072023213519_TFS_PhIr_5cm_30min_2d_374"  
-
-"28072023002440_TFS_PhIr_5cmdepth_2mm_365" is a 
-Single profile, depth recorded on Motor2.mm
 
 ###Omitting data from first program from data being used
 ```{r}
 microDO<-microDO%>%
   filter(program!="28072023002440_TFS_PhIr_5cmdepth_2mm_365")
-```
+
 ###Giving each profile a unique name
-```{r}
 #Each profile in all four of the programs has 26 points, which makes things easier
 #https://stackoverflow.com/questions/32078578/how-to-group-by-every-7-rows-and-aggregate-those-7-values-by-median
 #theData$seven_day_index <- c(0, rep(1:(nrow(theData)-1)%/%7))
@@ -130,6 +108,33 @@ microDO<-microDO %>%
 
 #making a new column with just the Time of start Date Time
 microDO$RProfileStartTime<-as_hms(microDO$ProfileStart)
+
+#making a column of just times using the as_hms() function in the hms package
+microDO$RTime<-as_hms(microDO$RDateTimeAST)
+#making a column of just date for faceting by date in graphs
+microDO$RDate<-as_date(microDO$RDateTimeAST)
+
+#Make a column that's the hour w/o minutes and seconds that a profile was taken, which will help with graphing later
+#Found example here: https://stackoverflow.com/questions/16444242/rounding-times-to-the-nearest-hour-in-r
+#floor_date() from lubridate package takes a date-time object and rounds it down to the nearest boundary of the specified time unit.
+microDO$RHour<-as.numeric(format(floor_date(microDO$RDateTimeAST, unit="hours"), format="%H"))
+
+
+```
+
+###Notes on data
+28072023002440_TFS_PhIr_5cmdepth_2mm_365 is a trial run, do not use
+28072023003700_TFS_PhIr_5cm_1hr_diurnal_368, 28072023003700_data_txt contains data for profiles that got from Motor 1=0 to 49.969 and elapse for 895 seconds and occur every 9,123 seconds (~2.5 hours)
+Laptop was set to Eastern Time Zone. To convert to local alaska time, subtract 4 hours
+Programs:
+[1] "28072023002440_TFS_PhIr_5cmdepth_2mm_365"    "28072023003700_TFS_PhIr_5cm_1hr_diurnal_368"
+[3] "28072023142101_TFS_PhIr_5cm_1hr_diurnal_370" "29072023131024_TFS_PhIr_5cm_1hr_diurnal_371"
+[5] "29072023213519_TFS_PhIr_5cm_30min_2d_374"  
+
+"28072023002440_TFS_PhIr_5cmdepth_2mm_365" is a 
+Single profile, depth recorded on Motor2.mm
+
+
 ```
 ##Presens FibOx DO Data
 ```{r}
@@ -299,7 +304,7 @@ ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm, color=as.POSIXct(RTime), shape=DOsens
   scale_y_reverse()+
   facet_wrap(~RDate)
 ```
-####Individual Dates, faceted by profile, labeled with start time
+###Individual Dates, faceted by profile, labeled with start time
 ```{r}
 microDO %>%
   filter(RDate==as.POSIXct("2023-07-29"))%>%
