@@ -77,7 +77,6 @@ microDO<-microDOraw %>%
   gather(key="DOsensor", value="DO.mgL", Channel1_DO_mgL:Channel2_DO_mgL)
 
 ###Omitting data from first program from data being used
-```{r}
 microDO<-microDO%>%
   filter(program!="28072023002440_TFS_PhIr_5cmdepth_2mm_365")
 
