@@ -117,8 +117,6 @@ microDO$RDate<-as_date(microDO$RDateTimeAST)
 #Found example here: https://stackoverflow.com/questions/16444242/rounding-times-to-the-nearest-hour-in-r
 #floor_date() from lubridate package takes a date-time object and rounds it down to the nearest boundary of the specified time unit.
 microDO$RHour<-as.numeric(format(floor_date(microDO$RDateTimeAST, unit="hours"), format="%H"))
-
-
 ```
 
 ###Notes on data
@@ -133,8 +131,6 @@ Programs:
 "28072023002440_TFS_PhIr_5cmdepth_2mm_365" is a 
 Single profile, depth recorded on Motor2.mm
 
-
-```
 ##Presens FibOx DO Data
 ```{r}
 #Reading in Dissolved oxygen concentrations measured with hand-held Presens FibOx cable
