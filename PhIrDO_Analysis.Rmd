@@ -328,13 +328,22 @@ ggsave("Figures/AllDOProfiles.png", width=10, height=3, units="in")
 ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=RDateTime, shape=AreaSite))+
   geom_point()+
   scale_y_reverse()
-
 ```
 ###All the data color coded by Time
 ```{r}
-ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=Time, shape=AreaSite))+
+ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=as.POSIXct(Time), shape=AreaSite))+
   geom_point()+
-  scale_y_reverse()
-#why isn't there a legend for the color-coded time? also looks like it's reading time as categorical
-
+  scale_y_reverse()+
+   theme_light()+
+  scale_colour_gradient2(low="black", mid="yellow", high = "blue" )
 ```
+###Faceted by site
+```{r}
+ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=as.POSIXct(Time), shape=AreaSite))+
+  geom_point()+
+  scale_y_reverse()+
+   theme_light()+
+  scale_colour_gradient2(low="black", mid="yellow", high = "blue" )+
+  facet_wrap(~O2.Location.Code)
+```
+
