@@ -294,11 +294,13 @@ microDO%>%
 ```
 ###Graphs of DO vs. Depth, faceted by date, color coded by time
 ```{r}
-ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm, color=as.POSIXct(RTime), shape=DOsensor))+
+ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm, color=as.numeric(RProfileStartTime), shape=DOsensor))+
   geom_point()+
   scale_y_reverse()+
   facet_wrap(~RDate)
 ```
+
+
 ###Individual Dates, faceted by profile, labeled with start time
 ```{r}
 microDO %>%
@@ -320,6 +322,55 @@ ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm))+
  labs(x="DO (mg/L)", y= "Depth (mm)")
 ggsave("Figures/AllDOProfiles.png", width=10, height=3, units="in")
 ```
+
+###Graphing vertical profiles connected by lines
+```{r}
+
+##Loooking at all the profiles from July 29, 2023
+microDO %>%
+  filter(RDate==as.POSIXct("2023-07-29"))%>%
+  ggplot(aes(x=DO.mgL, y=Motor1.mm))+
+  geom_point()+
+  scale_y_reverse() +
+  facet_wrap(~ProfIndex)
+##Proflie number 44 looks cool
+##Let's try to figure out how to draw teh graph we want with just that one
+
+microDO_Prof44 <- microDO %>%
+  filter(ProfIndex==44)
+summary(microDO_Prof44)
+
+ggplot(microDO_Prof44, aes(x=DO.mgL, y=Motor1.mm))+
+  geom_point()+
+    scale_y_reverse()+
+geom_line()
+
+#Geom_line() connects by order of x axis
+
+ggplot(microDO_Prof44, aes(x=DO.mgL, y=Motor1.mm))+
+  geom_point()+
+    scale_y_reverse()+
+    geom_path()
+#geom_path connects by order of the data
+
+#OK geom_path is what I want
+```
+
+###Graphs of DO vs. Depthcolor coded by time
+
+```{r}
+#this is a helpful resource for the color I chose and other ggplot things: https://ggplot2-book.org/scales-colour#sec-colour-continuous
+ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm, color=as.numeric(RProfileStartTime),group=ProfIndex))+
+  theme_light()+
+  geom_point(size=0.1)+
+    scale_color_viridis_c()+
+  geom_path()+
+  scale_y_reverse()+
+  theme(text=element_text(size=10))+
+ labs(x="DO (mg/L)", y= "Depth (mm)")
+
+```
+
 
 ##Presens Fibox DO profiles
 
