@@ -408,7 +408,7 @@ ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm))+
 ggsave("Figures/PresenseDO.png", width=5, height = 4)
 ```
 
-###All the data color coded by Time
+###All Presens data, DO vs. Depth, data color coded by Time
 ```{r}
 ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=as.POSIXct(Time), shape=AreaSite))+
   geom_point()+
@@ -416,7 +416,7 @@ ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=as.POSIXct(Time), shape=AreaSite
    theme_light()+
   scale_colour_gradient2(low="black", mid="yellow", high = "blue" )
 ```
-###Faceted by site
+### All Presens data, DO vs. Depth, Faceted by site
 ```{r}
 ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=as.POSIXct(Time), shape=AreaSite))+
   geom_point()+
