@@ -360,14 +360,23 @@ ggplot(microDO_Prof44, aes(x=DO.mgL, y=Motor1.mm))+
 
 ```{r}
 #this is a helpful resource for the color I chose and other ggplot things: https://ggplot2-book.org/scales-colour#sec-colour-continuous
+#another helpful resource: https://www.datanovia.com/en/blog/ggplot-legend-title-position-and-labels/#change-legend-title
+
 ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm, color=as.numeric(RProfileStartTime),group=ProfIndex))+
   theme_light()+
   geom_point(size=0.1)+
-    scale_color_viridis_c()+
+    scale_color_viridis_c(limits=c(0,86400),
+                          breaks=c(0,21600, 43200,64800,86400),
+                    labels=c("Midnight","06:00","Noon","18:00","Midnight"))+
+    #making sure the color is full 24 hours, there are 86400 seconds in 24 hours
   geom_path()+
   scale_y_reverse()+
-  theme(text=element_text(size=10))+
- labs(x="DO (mg/L)", y= "Depth (mm)")
+  theme(text=element_text(size=10),
+        legend.position = c(0.9,0.1),
+        legend.justification = c(1,0))+
+ labs(x="DO (mg/L)", y= "Depth (mm)", color="Time")+
+     theme(text=element_text(size=15))
+ggsave("Figures/MicroDOByTime.png", width=5, height=6)
 
 ```
 
