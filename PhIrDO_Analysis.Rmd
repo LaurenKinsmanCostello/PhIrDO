@@ -374,12 +374,40 @@ ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm, color=as.numeric(RProfileStartTime),g
 
 ##Presens Fibox DO profiles
 
-###All the data color coded by Date Time
+###All Presens data, DO vs. Depth, color coded by Date Time, shape coded by Site
 ```{r}
 ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=RDateTime, shape=AreaSite))+
   geom_point()+
-  scale_y_reverse()
+   theme_light()+
+  scale_y_reverse()+
+   theme(text=element_text(size=15))+
+  scale_shape_discrete(name="Non-Acidic Site", labels = c("Hydric", "Mesic"))+
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (mm)", color="Date Time")
+ggsave("Figures/PresenseDO.Date.Site.png", width=6, height = 4)
 ```
+###All Presens data, DO vs. Depth,  shape coded by Site
+```{r}
+ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, shape=AreaSite))+
+  geom_point()+
+   theme_light()+
+  scale_y_reverse()+
+   theme(text=element_text(size=15))+
+  scale_shape_discrete(name="Non-Acidic Site", labels = c("Hydric", "Mesic"))+
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (mm)")
+ggsave("Figures/PresenseDO.Site.png", width=6, height = 4)
+```
+
+###All Presens data, DO vs. Depth
+```{r}
+ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm))+
+  geom_point()+
+   theme_light()+
+  scale_y_reverse()+
+   theme(text=element_text(size=15))+
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (mm)")
+ggsave("Figures/PresenseDO.png", width=5, height = 4)
+```
+
 ###All the data color coded by Time
 ```{r}
 ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=as.POSIXct(Time), shape=AreaSite))+
