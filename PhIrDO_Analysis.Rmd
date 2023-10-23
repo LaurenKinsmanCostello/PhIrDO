@@ -117,6 +117,10 @@ microDO$RDate<-as_date(microDO$RDateTimeAST)
 #Found example here: https://stackoverflow.com/questions/16444242/rounding-times-to-the-nearest-hour-in-r
 #floor_date() from lubridate package takes a date-time object and rounds it down to the nearest boundary of the specified time unit.
 microDO$RHour<-as.numeric(format(floor_date(microDO$RDateTimeAST, unit="hours"), format="%H"))
+
+##Making a column that's date as a factor for graphing later
+
+microDO$Date<-as.factor(microDO$RDate)
 ```
 
 ###Notes on data
@@ -358,6 +362,7 @@ ggplot(microDO_Prof44, aes(x=DO.mgL, y=Motor1.mm))+
 
 ###Graphs of DO vs. Depthcolor coded by time
 
+##Micro DO vs. Depth, color coded by time of day
 ```{r}
 #this is a helpful resource for the color I chose and other ggplot things: https://ggplot2-book.org/scales-colour#sec-colour-continuous
 #another helpful resource: https://www.datanovia.com/en/blog/ggplot-legend-title-position-and-labels/#change-legend-title
@@ -380,6 +385,27 @@ ggsave("Figures/MicroDOByTime.png", width=5, height=6)
 
 ```
 
+
+##Micro DO vs. Depth, color coded by time of day and facetted by date
+```{r}
+ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm, color=as.numeric(RProfileStartTime),group=ProfIndex))+
+  theme_light()+
+  geom_point(size=0.1)+
+    scale_color_viridis_c(limits=c(0,86400),
+                          breaks=c(0,21600, 43200,64800,86400),
+                    labels=c("Midnight","06:00","Noon","18:00","Midnight"))+
+    #making sure the color is full 24 hours, there are 86400 seconds in 24 hours
+  geom_path()+
+  scale_y_reverse()+
+  theme(text=element_text(size=10),
+        legend.position = c(0.9,0.1),
+        legend.justification = c(1,0))+
+ labs(x="DO (mg/L)", y= "Depth (mm)", color="Time")+
+     theme(text=element_text(size=15))+
+  facet_wrap(RDate)
+ggsave("Figures/MicroDOByTime.png", width=5, height=6)
+
+```
 
 ##Presens Fibox DO profiles
 
