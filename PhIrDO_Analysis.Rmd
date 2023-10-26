@@ -362,7 +362,7 @@ ggplot(microDO_Prof44, aes(x=DO.mgL, y=Motor1.mm))+
 
 ###Graphs of DO vs. Depthcolor coded by time
 
-##Micro DO vs. Depth, color coded by time of day
+###Micro DO vs. Depth, color coded by time of day
 ```{r}
 #this is a helpful resource for the color I chose and other ggplot things: https://ggplot2-book.org/scales-colour#sec-colour-continuous
 #another helpful resource: https://www.datanovia.com/en/blog/ggplot-legend-title-position-and-labels/#change-legend-title
@@ -386,7 +386,7 @@ ggsave("Figures/MicroDOByTime.png", width=5, height=6)
 ```
 
 
-##Micro DO vs. Depth, color coded by time of day and facetted by date
+###Micro DO vs. Depth, color coded by time of day and facetted by date
 ```{r}
 ggplot(microDO, aes(x=DO.mgL, y=Motor1.mm, color=as.numeric(RProfileStartTime),group=ProfIndex))+
   theme_light()+
@@ -417,7 +417,7 @@ ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=RDateTime, shape=AreaSite))+
   scale_y_reverse()+
    theme(text=element_text(size=15))+
   scale_shape_discrete(name="Non-Acidic Site", labels = c("Hydric", "Mesic"))+
- labs(x="Dissolved Oxygen (mg/L)", y= "Depth (mm)", color="Date Time")
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (cm)", color="Date Time")
 ggsave("Figures/PresenseDO.Date.Site.png", width=6, height = 4)
 ```
 ###All Presens data, DO vs. Depth,  shape coded by Site
@@ -428,7 +428,7 @@ ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, shape=AreaSite))+
   scale_y_reverse()+
    theme(text=element_text(size=15))+
   scale_shape_discrete(name="Non-Acidic Site", labels = c("Hydric", "Mesic"))+
- labs(x="Dissolved Oxygen (mg/L)", y= "Depth (mm)")
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (cm)")
 ggsave("Figures/PresenseDO.Site.png", width=6, height = 4)
 ```
 
@@ -439,8 +439,69 @@ ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm))+
    theme_light()+
   scale_y_reverse()+
    theme(text=element_text(size=15))+
- labs(x="Dissolved Oxygen (mg/L)", y= "Depth (mm)")
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (cm)")
 ggsave("Figures/PresenseDO.png", width=5, height = 4)
+```
+
+###Three versions of Presens data graphed with Rooney et al. theme
+
+theme(legend.position = "bottom", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), panel.border = element_rect(color="gray",size=0.25, fill = NA),
+        axis.title = element_text(size = 16), axis.text = element_text(size = 16))
+        
+export via ggsave (height = 4.5, width = 2.25).
+
+####All Presens data, Rooney et al. theme, DO vs. Depth
+```{r}
+ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm))+
+  geom_point()+
+  theme(legend.position = "bottom", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), panel.border = element_rect(color="gray",size=0.25, fill = NA), axis.title = element_text(size = 16), axis.text = element_text(size = 16))+
+  scale_y_reverse()+
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (cm)")
+ggsave("Figures/RooneyeaPresenseDO.png", width=3.25, height = 4.5)
+```
+
+####All Presens data, Rooney et al. theme, DO vs. Depth, shape coded by site
+```{r}
+ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, shape=AreaSite))+
+  geom_point()+
+    scale_y_reverse()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), panel.border = element_rect(color="gray",size=0.25, fill = NA), axis.title = element_text(size = 16), axis.text = element_text(size = 16),
+         legend.position = c(0.9,0.1),
+        legend.justification = c(1,0)
+        )+
+  scale_shape_discrete(name="Non-Acidic Site", labels = c("Hydric", "Mesic"))+
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (cm)")
+ggsave("Figures/RooneyeaPresenseDO.Site.png", width=3.25, height = 4.5)
+```
+
+####All Presens data, Rooney et al. theme, DO vs. Depth, shape coded by site, color coded by Date Time
+```{r}
+ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=RDateTime, shape=AreaSite))+
+  geom_point()+
+   theme_light()+
+  scale_y_reverse()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), panel.border = element_rect(color="gray",size=0.25, fill = NA), axis.title = element_text(size = 16), axis.text = element_text(size = 16),
+         legend.position = c(0.9,0.1),
+        legend.justification = c(1,0)
+        )+
+  scale_shape_discrete(name="Non-Acidic Site", labels = c("Hydric", "Mesic"))+
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (cm)", color="Date Time")
+ggsave("Figures/RoonyeaPresenseDO.Date.Site.png", width=3.25, height = 4.5)
+```
+
+####All Presens data, Rooney et al. theme, DO vs. Depth,  color coded by Date Time
+```{r}
+ggplot(FiboxDO, aes(x=DO.mgL, y=Depth.cm, color=RDateTime))+
+  geom_point()+
+   theme_light()+
+  scale_y_reverse()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), panel.border = element_rect(color="gray",size=0.25, fill = NA), axis.title = element_text(size = 16), axis.text = element_text(size = 16),
+         legend.position = c(0.9,0.1),
+        legend.justification = c(1,0)
+        )+
+ labs(x="Dissolved Oxygen (mg/L)", y= "Depth (cm)", color="Date Time")
+ggsave("Figures/RoonyeaPresenseDO.Date.png", width=3.25, height = 4.5)
 ```
 
 ###All Presens data, DO vs. Depth, data color coded by Time
